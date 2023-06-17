@@ -1,0 +1,10 @@
+@import 'my-react-component/src/styles/typeface.module.scss';
+@import 'my-react-component/src/styles/colors.module.scss';
+
+.intro-wrapper {
+  padding: 16px;
+  & > p {
+    @include typeface-ridi('Heading_3');
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,117 @@
+@import 'my-react-component/src/styles/typeface.module.scss';
+@import 'my-react-component/src/styles/colors.module.scss';
+
+.intro-hero {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+
+  & > .intro-container {
+    position: fixed;
+    padding: 50px 100px;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // transition: opacity 0.2s linear;
+    & > .intro-explain {
+      z-index: 3;
+      @include typeface-ridi('Heading_1');
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 150%;
+      color: white;
+      .mobile & {
+        font-size: 40px;
+      }
+      & > span {
+        @include typeface-ridi('Heading_3');
+        color: color('plus');
+        font-size: 25px;
+        line-height: 150%;
+        text-align: center;
+        .mobile & {
+          font-size: 20px;
+        }
+      }
+    }
+    & > .background {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.section-2 {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  & > .background {
+    // background: linear-gradient(
+    //   180deg,
+    //   rgba(17, 17, 17, 0) 0%,
+    //   rgba(17, 17, 17, 0.7) 70%,
+    //   #020a13 100%
+    // );
+    background: linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0) 0%,
+      rgb(2, 10, 19, 0.85) 40%,
+      #020a13 100%
+    );
+    height: 80vh;
+  }
+  & > .explain {
+    // transition: opacity 0.2s linear;
+    position: relative;
+    padding-bottom: 30vh;
+    background-color: color('bg_black');
+    & > .name {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
+    & > div {
+      @include typeface-ridi('Heading_1');
+      color: color('white');
+      opacity: 0;
+    }
+  }
+  & > .section-skill {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+}
+
+.project-page-container {
+  & > h1 {
+    @include typeface-ridi('Heading_3');
+    font-size: 36px;
+    color: color('white');
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+// object-position: center;
+// background-image: url('hero-image.jpeg');
+// display: flex;
+// background-repeat: no-repeat;
+// background-size: contain;
+// background-position: center;
+// background-position: center 60px;
+// object-fit: cover;

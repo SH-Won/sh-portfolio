@@ -1,0 +1,10 @@
+.about-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 16px 80px 10vh;
+  .mobile & {
+    padding: 16px 24px 10vh;
+  }
+}

@@ -1,0 +1,52 @@
+@import 'my-react-component/src/styles/typeface.module.scss';
+@import 'my-react-component/src/styles/colors.module.scss';
+
+.skill-main-container {
+  // padding: 16px 80px;
+  width: 100%;
+  box-sizing: border-box;
+
+  & > .title {
+    @include typeface('Heading_1');
+  }
+  & > .skill-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 500px;
+
+    .mobile & {
+      // grid-template-columns: repeat(2, 1fr);
+      // column-gap: 20px;
+      // row-gap: 40px;
+    }
+    .tablet & {
+    }
+    & > .skill-image {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      // animation: trans-size 1s linear infinite;
+      opacity: 0.6;
+      &:hover {
+        opacity: 1;
+        animation: unset;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+  }
+}
+@keyframes trans-size {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
