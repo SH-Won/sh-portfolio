@@ -43,6 +43,10 @@
     & > .background {
       position: absolute;
       object-fit: cover;
+      .desktop & {
+        object-fit: contain;
+      }
+
       top: 0;
       z-index: 2;
       width: 100%;

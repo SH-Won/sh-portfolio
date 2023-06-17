@@ -1,4 +1,4 @@
-import { LoadingSpinner } from 'my-react-component'
+import { LoadingSpinner, RatioCardImage } from 'my-react-component'
 import { useLayoutEffect, useRef, useState } from 'react'
 import '@/styles/LandingPage.scss'
 import Intro from '@/components/Intro'
@@ -52,7 +52,7 @@ const LandingPage = () => {
       <div className="intro-hero" ref={intro}>
         <div className="intro-container" ref={trigger}>
           <img
-            src="https://res.cloudinary.com/dhjegsbqv/image/upload/v1639887022/gallery/79EA1C78-6D9F-4BFA-89FE-6746927942CB_hjeyzg.jpg"
+            src="https://res.cloudinary.com/dhjegsbqv/image/upload/v1687036433/post/leg_rk2ycg.png"
             className="background"
             onLoad={() => setLoading(false)}
           ></img>
