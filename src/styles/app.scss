@@ -1,12 +1,12 @@
 @import 'my-react-component/src/styles/colors.module.scss';
 @import 'my-react-component/src/styles/typeface.module.scss';
-@font-face {
-  font-family: 'RIDIBatang';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'RIDIBatang';
+//   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
+//     format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 body {
   background-color: color('bg_black');
 }

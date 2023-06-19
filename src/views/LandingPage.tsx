@@ -19,7 +19,8 @@ const LandingPage = () => {
       const percent = window.scrollY / height
       if (percent > 0.8) {
         const explainHeight = explain.current!.getBoundingClientRect().height
-        const percent = (window.scrollY - height * 0.8 - 20) / explainHeight
+        const percent = (window.scrollY - height * 0.8 - 100) / explainHeight
+        if (percent <= 0) return
         if (percent >= 1) {
           explain.current!.style.opacity = '1'
           return
@@ -52,18 +53,18 @@ const LandingPage = () => {
       <div className="intro-hero" ref={intro}>
         <div className="intro-container" ref={trigger}>
           <img
-            src="https://res.cloudinary.com/dhjegsbqv/image/upload/v1687036433/post/leg_rk2ycg.png"
+            src="https://res.cloudinary.com/dhjegsbqv/image/upload/v1687196992/post/background_bvb0rd.jpg"
             className="background"
             onLoad={() => setLoading(false)}
           ></img>
           <div className="intro-explain">
-            <span>Mission</span>
-            <br />
-            UI, UX
-            <br />
-            Front End
-            <br />
-            Developer
+            <span>Quest</span>
+            {/* <br /> */}
+            <span>더 좋은 제품을 만들기 위해</span>
+            {/* <br /> */}
+            <span>할 수 있는 것이</span>
+            {/* <br /> */}
+            <span>무엇이 있을까요?</span>
           </div>
         </div>
       </div>

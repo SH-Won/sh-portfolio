@@ -49,6 +49,7 @@ const usePopup = (registedRoutes: RegisterRouter[]) => {
   }
   const back = (index = -1) => {
     if (currentIndex === 0) {
+      close()
       return
     }
     go(-1)

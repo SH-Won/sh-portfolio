@@ -8,7 +8,8 @@
 
   & > .intro-container {
     position: fixed;
-    padding: 50px 100px;
+    // padding: 50px 100px;
+    padding: 50px 0;
     width: 100%;
     height: 100%;
     gap: 20px;
@@ -20,20 +21,31 @@
     align-items: center;
     // transition: opacity 0.2s linear;
     & > .intro-explain {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
       z-index: 3;
       @include typeface-ridi('Heading_1');
       font-weight: 500;
-      font-size: 70px;
+      // font-size: 70px;
+      font-size: 40px;
       line-height: 150%;
       color: white;
-      .mobile & {
-        font-size: 40px;
+      .tablet & {
+        font-size: 32px;
       }
-      & > span {
+      .mobile & {
+        font-size: 24px;
+      }
+      & > span:nth-child(1) {
         @include typeface-ridi('Heading_3');
         color: color('plus');
+        // color: color('main');
         font-size: 25px;
         line-height: 150%;
+        font-weight: 800;
         text-align: center;
         .mobile & {
           font-size: 20px;
@@ -41,11 +53,12 @@
       }
     }
     & > .background {
+      max-width: 100%;
       position: absolute;
       object-fit: cover;
-      .desktop & {
-        object-fit: contain;
-      }
+      // .desktop & {
+      //   object-fit: contain;
+      // }
 
       top: 0;
       z-index: 2;
@@ -75,6 +88,24 @@
   }
   & > .explain {
     // transition: opacity 0.2s linear;
+    &::before {
+      background-image: radial-gradient(at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%),
+        radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%),
+        radial-gradient(at 50% 95%, rgb(0, 255, 255) 0px, transparent 50%),
+        radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgb(255, 255, 0) 0px, transparent 50%),
+        radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%),
+        radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%);
+      position: fixed;
+      content: '';
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(100px) saturate(100%);
+      top: 0px;
+      opacity: 0.15;
+      transform: translateZ(0px);
+    }
     position: relative;
     padding-bottom: 30vh;
     background-color: color('bg_black');
