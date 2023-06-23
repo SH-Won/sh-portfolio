@@ -9,6 +9,7 @@ export interface IProject {
   github?: string
   video?: string
   link?: string
+  isDeploy?: boolean
 }
 const getRandomNumber = () => {
   return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
@@ -39,6 +40,7 @@ export const projects: IProject[] = [
     github: 'https://github.com/SH-Won/react-component',
     video: '',
     link: '',
+    isDeploy: false,
   },
   {
     _id: 1001,
@@ -63,7 +65,8 @@ export const projects: IProject[] = [
     details: [],
     github: 'https://github.com/SH-Won/tmdb',
     video: '',
-    link: '',
+    link: 'https://tmdb-sh-won.vercel.app/',
+    isDeploy: true,
   },
   {
     _id: 1002,
@@ -81,11 +84,12 @@ export const projects: IProject[] = [
       'https://res.cloudinary.com/dhjegsbqv/image/upload/v1658565409/shblog3_gicxye.png',
       'https://res.cloudinary.com/dhjegsbqv/image/upload/v1658565408/shblog4_lmgypr.png',
     ],
-    tools: ['JavaScript', 'webpack', 'quill', 'express', 'mongoose', 'cloudinary'],
+    tools: ['JavaScript', 'Webpack', 'quill', 'express', 'mongoose', 'cloudinary'],
     details: [],
     github: 'https://github.com/SH-Won/SH-blog',
     video: '',
     link: 'https://blog-sh.vercel.app/',
+    isDeploy: false,
   },
   {
     _id: 1003,
@@ -106,11 +110,12 @@ export const projects: IProject[] = [
       'https://res.cloudinary.com/dhjegsbqv/image/upload/v1653049451/gallery/mall3_soqbu6.png',
     ],
 
-    tools: ['Webpack', 'React', 'Redux', 'express', 'mongoose'],
+    tools: ['React', 'Redux', 'Webpack', 'express', 'mongoose'],
     details: [],
     github: 'https://github.com/SH-Won/FoodMall',
     video: '',
     link: '',
+    isDeploy: false,
   },
   {
     _id: 1004,
@@ -126,5 +131,6 @@ export const projects: IProject[] = [
     details: [],
     github: 'https://github.com/SH-Won/come-to-mind',
     link: '',
+    isDeploy: false,
   },
 ]

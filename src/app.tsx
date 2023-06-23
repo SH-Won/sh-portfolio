@@ -4,7 +4,30 @@ import { useBreakPoints } from './hooks'
 import '@/styles/app.scss'
 import '@/components/common/styles/common.scss'
 import { useEffect, useMemo } from 'react'
+import NextPageButton from './components/common/NextPageButton'
 
+const fontStyle = {
+  cursor: 'pointer',
+  //paddig : '4px 10px'
+  padding: '10px 20px',
+  fontSize: '13px',
+  fontWeight: '600',
+}
+const ROUTER_NAME = {
+  HOME: '/',
+  ABOUT: '/about',
+  PROJECT: '/project',
+}
+const routerMapper = {
+  [ROUTER_NAME.HOME]: {
+    text: 'About Me',
+    goNextRouter: ROUTER_NAME.ABOUT,
+  },
+  [ROUTER_NAME.ABOUT]: {
+    text: 'Go Project',
+    goNextRouter: ROUTER_NAME.PROJECT,
+  },
+}
 const App = () => {
   const { breakPointsClass } = useBreakPoints()
   const navigate = useNavigate()
@@ -29,18 +52,30 @@ const App = () => {
         fixed={isNotHome ? false : true}
         back={isNotHome ? goBack : undefined}
         isMobile={breakPointsClass === 'mobile'}
-        title="SH Portfolio"
+        title="SH"
         backgroundColor="transparent"
         iconColor={Colors.white}
       >
-        <span style={{ cursor: 'pointer', padding: '16px' }} onClick={() => navigate('/about')}>
-          About
+        {/* <div
+          style={{
+            display: 'flex',
+            gap: '12px',
+            paddingLeft: '16px',
+          }}
+        > */}
+        <span style={fontStyle} onClick={() => navigate('/about')}>
+          ABOUT
         </span>
-        <span style={{ cursor: 'pointer', padding: '16px' }} onClick={() => navigate('/project')}>
-          Project
+        <span style={fontStyle} onClick={() => navigate('/project')}>
+          PROJECT
         </span>
+        {/* </div> */}
       </Navigation>
       <Outlet />
+      {/* <NextPageButton
+        text={routerMapper[location.pathname].text}
+        click={() => navigate(routerMapper[location.pathname].goNextRouter)}
+      /> */}
     </div>
   )
 }

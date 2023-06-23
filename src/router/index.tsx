@@ -12,14 +12,17 @@ export const router = createBrowserRouter(
         {
           path: '/',
           element: <LandingPage />,
+          // Component: lazy(() => import('@/views/LandingPage')),
         },
         {
           path: '/about',
           element: <AboutPage />,
+          // Component: lazy(() => import('@/views/AboutPage')),
         },
         {
           path: '/project',
           element: <ProjectPage />,
+          // Component: lazy(() => import('@/views/ProjectPage')),
         },
       ],
     },

@@ -1,16 +1,12 @@
 @import 'my-react-component/src/styles/colors.module.scss';
 @import 'my-react-component/src/styles/typeface.module.scss';
-// @font-face {
-//   font-family: 'RIDIBatang';
-//   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
-//     format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+
 body {
   background-color: color('bg_black');
 }
 .main-container {
+  // font-family: 'RIDIBatang';
+  font-family: SUIT;
   min-height: 100vh;
   overflow: hidden;
   & > .navigation {
@@ -94,7 +90,8 @@ body {
 .project-page-container {
   padding-top: 16px;
   & > h1 {
-    @include typeface-ridi('Heading_3');
+    // @include typeface-ridi('Heading_3');
+    @include typeface('Heading_3');
     font-size: 36px;
     color: white;
     text-align: center;

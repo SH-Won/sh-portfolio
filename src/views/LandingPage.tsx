@@ -1,4 +1,4 @@
-import { LoadingSpinner, RatioCardImage } from 'my-react-component'
+import { LoadingSpinner } from 'my-react-component'
 import { useLayoutEffect, useRef, useState } from 'react'
 import '@/styles/LandingPage.scss'
 import Intro from '@/components/Intro'
@@ -20,13 +20,15 @@ const LandingPage = () => {
       if (percent > 0.8) {
         const explainHeight = explain.current!.getBoundingClientRect().height
         const percent = (window.scrollY - height * 0.8 - 100) / explainHeight
+        // const percent = (window.scrollY - height - 100) / explainHeight
         if (percent <= 0) return
         if (percent >= 1) {
           explain.current!.style.opacity = '1'
           return
         }
-        explain.current!.style.opacity = `${percent}`
-        return
+        explain.current!.style.opacity = `${percent * 2}`
+        // explain.current!.style.opacity = `${percent - 1.5}`
+        // return
       }
       trigger.current!.style.opacity = `${1 - percent * 1}`
     }

@@ -3,6 +3,8 @@
 
 .intro-wrapper {
   padding: 16px 60px;
+  max-width: 670px;
+  margin: 0 auto;
   .mobile & {
     padding: 16px;
   }
@@ -40,7 +42,8 @@
     letter-spacing: 1px;
   }
   & > p {
-    @include typeface-ridi('Heading_3');
+    // @include typeface-ridi('Heading_3');
+    @include typeface('Heading_3');
     font-weight: 300;
     font-size: 16px;
     line-height: 32px;

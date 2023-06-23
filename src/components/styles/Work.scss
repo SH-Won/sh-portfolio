@@ -20,7 +20,8 @@
     & > .period {
       padding-right: 10px;
       text-align: center;
-      @include typeface-ridi('Heading_3');
+      // @include typeface-ridi('Heading_3');
+      @include typeface('Heading_3');
       border-right: 1.5px solid color('white');
       .mobile & {
         text-align: start;
@@ -35,14 +36,18 @@
       gap: 8px;
       & > .compony {
         @include typeface-ridi('Heading_1');
+        // @include typeface('Heading_1');
         .mobile & {
           @include typeface-ridi('Heading_2');
+          // @include typeface('Heading_2');
         }
       }
       & > .job {
-        @include typeface-ridi('Heading_2');
+        // @include typeface-ridi('Heading_2');
+        @include typeface('Heading_2');
         .mobile & {
-          @include typeface-ridi('Paragraph_1_sb');
+          // @include typeface-ridi('Paragraph_1_sb');
+          @include typeface('Paragraph_1_sb');
         }
       }
       & > .tool {
@@ -59,7 +64,9 @@
           gap: 24px;
         }
         // @include typeface('Paragraph_1_m');
-        @include typeface-ridi('Paragraph_1_m');
+        // @include typeface-ridi('Paragraph_1_m');
+        @include typeface('Paragraph_1_m');
+
         & > .experience {
           display: flex;
           flex-direction: column;
@@ -70,6 +77,7 @@
             font-weight: 900;
           }
           & > .explain-wrapper {
+            font-weight: 300;
             margin: 0;
             padding: 0 0 0 20px;
             display: flex;

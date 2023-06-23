@@ -71,7 +71,8 @@
   }
 
   & > .project-detail-description {
-    @include typeface-ridi('Paragraph_1_m');
+    // @include typeface-ridi('Paragraph_1_m');
+    @include typeface('Paragraph_1_m');
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -92,6 +93,14 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+      }
+      & > a {
+        color: color('white');
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: color('code');
+        }
       }
     }
   }

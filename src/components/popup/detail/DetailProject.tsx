@@ -2,7 +2,6 @@ import ItemList from '@/components/common/ItemList'
 import { IProject } from '@/const/project'
 import { PopupComponentProps } from '@/types/popup/RouterTypes'
 import { AutoCarousel, Button, Colors, RatioCardImage, SelectedItem } from 'my-react-component'
-import React, { useMemo } from 'react'
 import './styles/DetailProject.scss'
 
 interface DetailProjectProps extends PopupComponentProps {
@@ -46,7 +45,9 @@ const DetailProject = ({ project, close }: DetailProjectProps) => {
         </div>
         <div className="information">
           <span className="sub-title">GitHub</span>
-          <span>{project.github}</span>
+          <a href={project.github} target="_blank" rel="noreferrer">
+            {project.github}
+          </a>
         </div>
       </div>
       <Button

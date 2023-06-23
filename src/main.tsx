@@ -5,7 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 import 'my-react-component/dist/style.css'
 import '@/i18n'
-import { OverLay } from 'my-react-component'
+import { OverLay, PageLoadingSpinner } from 'my-react-component'
 const rootElement = document.querySelector('#root')
 
 if (!rootElement) {
@@ -17,7 +17,8 @@ root.render(
   <Suspense
     fallback={
       <OverLay isOpen={true} opacity={0.8}>
-        <img style={{ width: '250px', height: '250px' }} src="/assets/12.jpg" />
+        {/* <img style={{ width: '250px', height: '250px' }} src="/30.gif" /> */}
+        <PageLoadingSpinner text="please wait a second" />
       </OverLay>
     }
   >
