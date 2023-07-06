@@ -7,7 +7,7 @@ const useBreakPoints = () => {
   const [breakPoints, setBreakPoints] = useState<number>(window.innerWidth)
   const defaultBreakPoinsts = {
     mobile: 500,
-    tablet: 900,
+    tablet: 768,
     desktop: 1100,
   }
   const throttle = useCallback((func: () => void, time: number) => {
