@@ -1,4 +1,4 @@
-import { LoadingSpinner } from 'my-react-component'
+import { LoadingSpinner, PageLoadingSpinner } from 'my-react-component'
 import { useLayoutEffect, useRef, useState } from 'react'
 import '@/styles/LandingPage.scss'
 import Intro from '@/components/Intro'
@@ -44,6 +44,7 @@ const LandingPage = () => {
       }
     }
     const throttleScrollEvent = throttling(scrollEvent)
+    scrollEvent()
     window.addEventListener('scroll', scrollEvent)
     return () => {
       window.removeEventListener('scroll', scrollEvent)
@@ -61,11 +62,8 @@ const LandingPage = () => {
           ></img>
           <div className="intro-explain">
             <span>Quest</span>
-            {/* <br /> */}
             <span>더 좋은 제품을 만들기 위해</span>
-            {/* <br /> */}
             <span>할 수 있는 것이</span>
-            {/* <br /> */}
             <span>무엇이 있을까요?</span>
           </div>
         </div>
@@ -79,7 +77,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      {loading && <LoadingSpinner opacity={0.6} />}
+      {loading && <PageLoadingSpinner text="please wait a second" />}
     </>
   )
 }

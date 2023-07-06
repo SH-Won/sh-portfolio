@@ -17,7 +17,6 @@ root.render(
   <Suspense
     fallback={
       <OverLay isOpen={true} opacity={0.8}>
-        {/* <img style={{ width: '250px', height: '250px' }} src="/30.gif" /> */}
         <PageLoadingSpinner text="please wait a second" />
       </OverLay>
     }
