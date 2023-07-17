@@ -1,0 +1,27 @@
+@import 'my-react-component/src/styles/typeface.module.scss';
+@import 'my-react-component/src/styles/colors.module.scss';
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  & > .sub-container {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .mobile & {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    gap: 10px;
+    & > .heading {
+      padding-right: 10px;
+    }
+    & > .sub-title {
+      padding-left: 10px;
+    }
+  }
+}

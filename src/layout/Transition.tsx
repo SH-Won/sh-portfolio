@@ -3,6 +3,7 @@ interface TransitionProps {
   forceRender?: boolean
   className?: string
   children: JSX.Element | JSX.Element[] | string
+  opacity?: number
 }
 const Transition = (props: TransitionProps) => {
   const container = useRef<HTMLDivElement>(null)
@@ -11,7 +12,9 @@ const Transition = (props: TransitionProps) => {
       (entries, ob) => {
         entries.forEach((entry: any) => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = entry.target.classList.contains('disabled') ? '0.5' : '1'
+            entry.target.style.opacity = entry.target.classList.contains('disabled')
+              ? '0.5'
+              : `${props.opacity ?? '1'}`
           } else {
             entry.target.style.opacity = '0'
           }

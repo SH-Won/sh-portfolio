@@ -13,7 +13,7 @@
     "axios": "^1.3.5",
     "browserify-rsa": "^4.1.0",
     "i18next": "^22.4.14",
-    "my-react-component": "https://github.com/SH-Won/react-component.git#bf35772b402a55cd0e05298a950b497ee905d915",
+    "my-react-component": "https://github.com/SH-Won/react-component.git#1ca3cadec248431e33346291c35868d1212c3641",
     "node-stdlib-browser": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

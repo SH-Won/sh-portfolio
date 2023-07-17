@@ -1,24 +1,99 @@
 @import 'my-react-component/src/styles/colors.module.scss';
 @import 'my-react-component/src/styles/typeface.module.scss';
+
+body {
+  background-color: color('bg_black');
+}
 .main-container {
+  font-family: SUIT;
   min-height: 100vh;
-  padding-bottom: 70px;
-  background-color: #f5f6f8;
+  overflow: hidden;
+  & > .navigation {
+    z-index: 1000;
+    background-color: transparent;
+    color: color('white');
+
+    & > .appBar {
+      background-color: inherit;
+      border-bottom: none;
+    }
+    & > .navigation-drawer {
+      background-color: color('bg_black');
+      &::before {
+        content: '';
+        height: 100vh;
+        width: 100vw;
+        color: rgba(113, 113, 113, 0.1); // 격자 밀도 조정
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background: linear-gradient(currentcolor 1px, transparent 1px) 0% 0% / 94px 90px,
+          linear-gradient(to right, currentcolor 1px, transparent 1px) transparent;
+
+        transition: all 0.5s linear 0s;
+      }
+      &::after {
+        background-image: radial-gradient(at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%),
+          radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%),
+          radial-gradient(at 50% 95%, rgb(0, 255, 255) 0px, transparent 50%),
+          radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%),
+          radial-gradient(at 90% 90%, rgb(255, 255, 0) 0px, transparent 50%),
+          radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%),
+          radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%);
+        position: absolute;
+        content: '';
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        filter: blur(100px) saturate(100%);
+        top: 0px;
+        left: 0;
+        opacity: 0.6;
+        transform: translateZ(0px);
+      }
+    }
+  }
+  &::before {
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    color: rgba(113, 113, 113, 0.2); // 격자 밀도 조정
+    position: fixed;
+    z-index: -1;
+    background: linear-gradient(currentcolor 1px, transparent 1px) 0% 0% / 94px 90px,
+      linear-gradient(to right, currentcolor 1px, transparent 1px),
+      linear-gradient(90deg, currentcolor 1px, transparent 1px) 0% 0% / 94px 90px,
+      linear-gradient(90deg, currentcolor 1px, transparent 1px) transparent;
+    transition: all 0.5s linear 0s;
+  }
+  &::after {
+    background-image: radial-gradient(at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%),
+      radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%),
+      radial-gradient(at 50% 95%, rgb(0, 255, 255) 0px, transparent 50%),
+      radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, rgb(255, 255, 0) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%);
+    position: fixed;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    filter: blur(100px) saturate(100%);
+    top: 0px;
+    opacity: 0.15;
+    transform: translateZ(0px);
+  }
 }
-.main-container.desktop {
-  // padding-left: var(--navigation-padding);
-}
-.search {
-  align-self: center;
-  cursor: pointer;
-}
-.app-bar-search {
-  width: 100%;
-  justify-content: flex-end;
-  position: absolute;
-  display: flex;
-  gap: 10px;
-  top: 72px;
-  right: 15px;
-  z-index: 10000;
+.project-page-container {
+  padding-top: 16px;
+  & > h1 {
+    // @include typeface-ridi('Heading_3');
+    @include typeface('Heading_3');
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+  }
 }

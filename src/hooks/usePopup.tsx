@@ -3,7 +3,7 @@ import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 // import Event from 'eventemitter3'
 import { useBreakPoints } from './useBreakPoints'
 import BasicPopup from '@/components/BasicPopup'
-import { LoadingSpinner } from 'my-react-component'
+import { LoadingSpinner, PopupBasicHeader, PopupDrawer } from 'my-react-component'
 
 // 이게 더 좋은 방법이 있을 꺼임 왜 클래스를 사용하지 못하는거지...?!?!?!
 const usePopup = (registedRoutes: RegisterRouter[]) => {
@@ -13,6 +13,7 @@ const usePopup = (registedRoutes: RegisterRouter[]) => {
   const [history, setHistory] = useState<RouteHistory[]>([])
   const [open, setOpen] = useState<boolean>(false)
   const [title, setTitle] = useState<string>('팝업')
+
   const push = (route: RouterPushParams): void => {
     const findRoute = registedRoutes.find((r) => r.name === route.name)
     setCurrentIndex((prev) => prev + 1)
@@ -24,6 +25,9 @@ const usePopup = (registedRoutes: RegisterRouter[]) => {
       component: findRoute?.component,
       maxProgress: findRoute?.maxProgress,
       progress: findRoute?.progress,
+      backgroundColor: findRoute?.backgroundColor,
+      fontColor: findRoute?.fontColor,
+      type: findRoute?.type ?? 'basic',
     }
     setHistory((prev) => [...prev, historyObj])
     setTitle(historyObj.title)
@@ -45,13 +49,21 @@ const usePopup = (registedRoutes: RegisterRouter[]) => {
   }
   const back = (index = -1) => {
     if (currentIndex === 0) {
+      close()
       return
     }
     go(-1)
   }
   const close = () => {
-    setCurrentIndex(-1)
-    setHistory([])
+    if (history[currentIndex]?.type === 'drawer') {
+      setTimeout(() => {
+        setCurrentIndex(-1)
+        setHistory([])
+      }, 300)
+    } else {
+      setHistory([])
+      setCurrentIndex(-1)
+    }
     setCurrentRoute(registedRoutes[0].component)
     setOpen(false)
   }
@@ -64,6 +76,7 @@ const usePopup = (registedRoutes: RegisterRouter[]) => {
     }
     const maxProgress = history[currentIndex]?.maxProgress
     const progress = history[currentIndex]?.progress
+
     return (
       <BasicPopup
         isMobile={breakPointsClass === 'mobile'}
@@ -80,8 +93,31 @@ const usePopup = (registedRoutes: RegisterRouter[]) => {
       </BasicPopup>
     )
   }, [breakPointsClass, open, CurrentRoute])
+
+  const PopupDrawerRouter = useMemo(() => {
+    const routeProps = {
+      ...history[currentIndex]?.props,
+      push,
+      close,
+    }
+    const maxProgress = history[currentIndex]?.maxProgress
+    const progress = history[currentIndex]?.progress
+    return (
+      <PopupDrawer close={close} isOpen={open} type="right">
+        <PopupBasicHeader
+          title={title}
+          maxProgress={maxProgress}
+          progress={progress}
+          back={back}
+          close={close}
+        />
+        <CurrentRoute {...routeProps} />
+      </PopupDrawer>
+    )
+  }, [open, history])
   return {
     PopupRouter,
+    PopupDrawerRouter,
     push,
   }
 }

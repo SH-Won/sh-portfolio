@@ -1,0 +1,98 @@
+@import 'my-react-component/src/styles/colors.module.scss';
+@import 'my-react-component/src/styles/typeface.module.scss';
+
+.project-container {
+  margin: 0 auto;
+  max-width: 960px;
+  z-index: 40;
+  padding: 40px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  .tablet & {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mobile & {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 16px;
+  }
+  & > .project-card {
+    cursor: pointer;
+    &::before {
+      content: '';
+      pointer-events: none;
+      display: block;
+      position: absolute;
+      inset: 0px;
+      z-index: -1;
+      background: radial-gradient(
+        circle at center center,
+        white 10%,
+        whitesmoke 11%,
+        whitesmoke 100%
+      );
+      border-radius: 8px;
+    }
+    &::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+      inset: 0px;
+      opacity: 0.8;
+      .mobile & {
+        opacity: 0.8;
+      }
+      background: linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 80%);
+    }
+    color: color('white');
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+
+    & > .project-info {
+      & > .heading {
+        // @include typeface-ridi('Heading_3');
+        @include typeface('Heading_3');
+      }
+      position: absolute;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      bottom: 16px;
+      opacity: 1;
+      z-index: 3;
+      & > .description {
+        margin: 0;
+        @include typeface-ridi('Paragraph_1_m');
+        color: color('grey_ccc');
+      }
+      @media screen and (max-width: 380px) {
+        & {
+          gap: unset;
+          & > .heading {
+          }
+          .mobile & {
+            & > .tool {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    & > .tool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  }
+}
