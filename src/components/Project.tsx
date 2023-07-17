@@ -10,7 +10,6 @@ const Project = ({ openDrawer }: ProjectProps) => {
   return (
     <>
       <h1>프로젝트</h1>
-      {/* <span>클릭</span> */}
       <ItemList
         className="project-container"
         items={projects}

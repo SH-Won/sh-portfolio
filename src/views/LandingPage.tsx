@@ -1,4 +1,4 @@
-import { LoadingSpinner, PageLoadingSpinner } from 'my-react-component'
+import { PageLoadingSpinner } from 'my-react-component'
 import { useLayoutEffect, useRef, useState } from 'react'
 import '@/styles/LandingPage.scss'
 import Intro from '@/components/Intro'
@@ -69,7 +69,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="section-2">
+      <div className="intro-section">
         <div className="background" ref={background}></div>
         <div className="explain">
           <div ref={explain}>

@@ -73,17 +73,14 @@
       & > .description {
         margin: 0;
         @include typeface-ridi('Paragraph_1_m');
-        // @include typeface('Paragraph_1_m');
         color: color('grey_ccc');
       }
       @media screen and (max-width: 380px) {
         & {
           gap: unset;
           & > .heading {
-            // text-align: center;
           }
           .mobile & {
-            // & > .description,
             & > .tool {
               display: none;
             }

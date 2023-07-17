@@ -4,7 +4,6 @@ import { useBreakPoints } from './hooks'
 import '@/styles/app.scss'
 import '@/components/common/styles/common.scss'
 import { useEffect, useMemo } from 'react'
-import NextPageButton from './components/common/NextPageButton'
 
 const fontStyle = {
   cursor: 'pointer',
@@ -56,32 +55,16 @@ const App = () => {
         backgroundColor="transparent"
         iconColor={Colors.white}
       >
-        {/* <div
-          style={{
-            display: 'flex',
-            gap: '12px',
-            paddingLeft: '16px',
-          }}
-        > */}
         <span style={fontStyle} onClick={() => navigate('/about')}>
           ABOUT
         </span>
         <span style={fontStyle} onClick={() => navigate('/project')}>
           PROJECT
         </span>
-        {/* </div> */}
       </Navigation>
       <Outlet />
-      {/* <NextPageButton
-        text={routerMapper[location.pathname].text}
-        click={() => navigate(routerMapper[location.pathname].goNextRouter)}
-      /> */}
     </div>
   )
 }
-
-// intro skill project QnA
-// + detail project ??
-// + filter ??
 
 export default App

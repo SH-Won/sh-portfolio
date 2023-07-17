@@ -15,22 +15,6 @@
     min-width: 130px;
   }
 }
-
-// ColumnExplain.tsx
-.column-explain {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  & > .break-words {
-    display: inline-block;
-    @include typeface('Paragraph_3_b');
-    color: color('grey_999');
-    // white-space: nowrap;
-    word-break: break-all;
-    // overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
 .heading {
   // @include typeface-ridi('Heading_2');
   @include typeface('Heading_2');

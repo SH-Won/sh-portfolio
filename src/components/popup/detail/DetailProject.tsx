@@ -1,7 +1,6 @@
-import ItemList from '@/components/common/ItemList'
 import { IProject } from '@/const/project'
 import { PopupComponentProps } from '@/types/popup/RouterTypes'
-import { AutoCarousel, Button, Colors, RatioCardImage, SelectedItem } from 'my-react-component'
+import { AutoCarousel, Button, Colors, RatioCardImage } from 'my-react-component'
 import './styles/DetailProject.scss'
 
 interface DetailProjectProps extends PopupComponentProps {
@@ -28,7 +27,6 @@ const DetailProject = ({ project, close }: DetailProjectProps) => {
           <span className="sub-title">Tech</span>
           <div className="tool">
             {project.tools.map((tool) => (
-              // <SelectedItem size="small" text={tool} key={tool} type="border" selected={false} />
               <span key={tool} className="tool-item indigo">
                 {tool}
               </span>

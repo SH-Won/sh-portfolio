@@ -1,4 +1,3 @@
-import { Notification } from 'my-react-component'
 import { useNavigate } from 'react-router-dom'
 import NextPageButton from './common/NextPageButton'
 import './styles/Intro.scss'
@@ -11,7 +10,6 @@ const Intro = () => {
         안녕하세요 <br />
         원성호 입니다.
       </h2>
-      {/* <Notification text="준비중 입니다" height="300px" /> */}
       <p>
         React, Vue 를 이용하여 프론트엔드 개발을 하고 있습니다. <br />
         서비스 제품에 고객에게 편리한 기능이 많고, 획기적이여도 고객이 서비스 제품을 사용하는 것이

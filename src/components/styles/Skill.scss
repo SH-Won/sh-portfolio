@@ -2,7 +2,6 @@
 @import 'my-react-component/src/styles/colors.module.scss';
 
 .skill-main-container {
-  // padding: 16px 80px;
   width: 100%;
   box-sizing: border-box;
 
@@ -16,11 +15,6 @@
     gap: 10px;
     max-width: 500px;
 
-    .mobile & {
-      // grid-template-columns: repeat(2, 1fr);
-      // column-gap: 20px;
-      // row-gap: 40px;
-    }
     .tablet & {
     }
     & > .skill-image {
@@ -28,7 +22,6 @@
       align-items: center;
       flex-direction: column;
       justify-content: space-between;
-      // animation: trans-size 1s linear infinite;
       opacity: 0.6;
       &:hover {
         opacity: 1;

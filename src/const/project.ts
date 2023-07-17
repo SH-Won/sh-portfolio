@@ -11,9 +11,6 @@ export interface IProject {
   link?: string
   isDeploy?: boolean
 }
-const getRandomNumber = () => {
-  return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
-}
 export const projects: IProject[] = [
   {
     _id: 1000,

@@ -1,14 +1,8 @@
-import React, { Ref, RefObject, useLayoutEffect, useRef, useState } from 'react'
 import { skills } from '@/const/images'
 import './styles/Skill.scss'
-import { Button, RatioCardImage, Colors } from 'my-react-component'
-import { RouterPushParams } from '@/types/popup/RouterTypes'
-interface SkillProps {
-  introRef?: RefObject<HTMLDivElement>
-  triggerRef?: RefObject<HTMLDivElement>
-  openPopup?: (route: RouterPushParams) => void
-}
-const Skill = ({ introRef, triggerRef, openPopup }: SkillProps) => {
+import { RatioCardImage } from 'my-react-component'
+
+const Skill = () => {
   return (
     <>
       <div className="skill-main-container">
