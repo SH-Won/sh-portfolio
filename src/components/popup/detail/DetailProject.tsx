@@ -46,6 +46,14 @@ const DetailProject = ({ project, close }: DetailProjectProps) => {
           <a href={project.github} target="_blank" rel="noreferrer">
             {project.github}
           </a>
+          {project.link && (
+            <>
+              <span className="sub-title">Website</span>
+              <a href={project.link} target="_blank" rel="noreferrer">
+                {project.link}
+              </a>
+            </>
+          )}
         </div>
       </div>
       <Button
