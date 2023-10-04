@@ -86,6 +86,9 @@
     & > .information {
       display: flex;
       flex-direction: column;
+      & > .sub-title {
+        padding-top: 10px;
+      }
 
       & > .list {
         margin: 0;
