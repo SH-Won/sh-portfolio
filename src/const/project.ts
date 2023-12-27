@@ -13,6 +13,31 @@ export interface IProject {
 }
 export const projects: IProject[] = [
   {
+    _id: 999,
+    heading: 'Share Project',
+    description: '자신의 프로젝트를 업로드하여 공유하는 웹사이트',
+    information: [
+      'Next Auth 를 이용한 로그인',
+      '텍스트, 이미지 블록을 사용자가 선택하여 글 작성후 업로드',
+      '프로젝트 좋아요, 스크랩, 숨기기',
+      '모바일 테블릿 반응형',
+    ],
+    imageUrls: [
+      'https://res.cloudinary.com/dhjegsbqv/image/upload/v1703650309/post/share_1_obm1pk.jpg',
+      'https://res.cloudinary.com/dhjegsbqv/image/upload/v1703650310/post/share_2_jxcq56.jpg',
+      'https://res.cloudinary.com/dhjegsbqv/image/upload/v1703650310/post/share_3_wzxmjl.jpg',
+      'https://res.cloudinary.com/dhjegsbqv/image/upload/v1703650355/post/share_4_odkzjb.jpg',
+      'https://res.cloudinary.com/dhjegsbqv/image/upload/v1703650374/post/share_6_otcdwy.jpg',
+      'https://res.cloudinary.com/dhjegsbqv/image/upload/v1703650378/post/share_7_xe8j2a.jpg',
+    ],
+    tools: ['Next', 'TypeScript', 'Sass', 'Redux Toolkit', 'Next Auth', 'Mongo DB'],
+    details: [],
+    github: 'https://github.com/SH-Won/share-project',
+    video: '',
+    link: 'https://something-share.vercel.app/',
+    isDeploy: true,
+  },
+  {
     _id: 1000,
     heading: 'UI Component',
     description: '내가 쓰려고 만든 UI 모음',
